@@ -14,6 +14,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 s3 = S3Connection(settings.AWS_KEY, settings.AWS_SECRET)
 
+
 def update_cache():
     api_url = 'https://api.github.com'
     url = api_url + '/repos/devsoc/dailyprogrammer/contents/solutions'
@@ -47,6 +48,7 @@ def home():
 @app.route('/update')
 def update():
     update_cache()
+    print('Cache updated')
     return 'done!'
 
 
