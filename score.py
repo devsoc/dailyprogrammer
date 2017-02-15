@@ -21,9 +21,14 @@ async def get_names(loop, baseurl):
     names = Counter(re.findall(r"-(\w+).", x)[0] for x in files if '-' in x)
     return dict(names)
 
-if __name__ == '__main__':
+
+def main():
     api_url = 'https://api.github.com'
     url = api_url + '/repos/devsoc/dailyprogrammer/contents/solutions'
     loop = asyncio.get_event_loop()
-    names = loop.run_until_complete(get_names(loop, url))
+    return loop.run_until_complete(get_names(loop, url))
+
+
+if __name__ == '__main__':
+    names = main()
     print(names)
