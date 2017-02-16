@@ -34,8 +34,11 @@ async def update_readme(session, scores, loop, api_url):
     print(scores)
     readme = base64.b64decode(resp['content']).decode()
     for line in readme.split('\n'):
-        new_readme.append(line)
-        if '| ------------- |' in line:
+        if '|' not in line:
+            new_readme.append(line)
+        if '## Scores' in line:
+            new_readme.append('| Name | Challenges Solved |')
+            new_readme.append('| ------------- | ------------- |')
             new_readme += ['| ' + n + ' | ' + str(s) + ' |' for n, s in scores]
     new_readme = '\n'.join(new_readme)
     print(new_readme)
