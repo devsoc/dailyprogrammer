@@ -46,7 +46,7 @@ async def update_readme(session, scores, loop, api_url):
     commit = {
         'committer': {'name': 'Bot', 'email': 'programmer.arsh@gmail.com'},
         'sha': sha,
-        'message': '[Bot commit] testing api',
+        'message': '[Bot commit] Score updated',
         'content': base64.b64encode(new_readme.encode()).decode()
     }
     print(commit)

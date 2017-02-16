@@ -15,7 +15,7 @@ def run_script():
     thread.join()
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     run_script()
     return 'Done'
