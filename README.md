@@ -1,6 +1,10 @@
 # dailyprogrammer
 A repo where we collect our solutions to [/r/dailyprogrammer](http://reddit.com/r/dailyprogrammer) challenges
 
+## Scores:
+| Name          | Challenges Solved |
+| ------------- | ------------- |
+
 ## Format to add Solutions:
   - Your file should be present at /solutions/[ challenge number ]/[ difficulty ]/[ language-name ]-[ your-name ].[ ext ]
     
